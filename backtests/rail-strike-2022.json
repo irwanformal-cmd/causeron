@@ -1,0 +1,7 @@
+{
+  "name": "Rail strike wave 2022",
+  "seed_text": "Transport workers launch a nationwide strike and halt trains and buses during rush hour",
+  "lang": "en",
+  "seed": 2022,
+  "expect_any": ["tensions escalate", "concessions", "mobilize", "security response"]
+}

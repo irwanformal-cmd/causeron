@@ -1,0 +1,7 @@
+{
+  "name": "Europe energy crunch 2022",
+  "seed_text": "European governments cap household energy bills as gas supplies from the east stop flowing",
+  "lang": "en",
+  "seed": 2022,
+  "expect_any": ["cost of living", "budgets tighten", "dissatisfaction", "budget pressure"]
+}
