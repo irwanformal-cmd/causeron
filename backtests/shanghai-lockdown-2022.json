@@ -1,0 +1,7 @@
+{
+  "name": "Shanghai lockdown 2022",
+  "seed_text": "City authorities seal residential compounds in Shanghai and close factories to contain an outbreak",
+  "lang": "en",
+  "seed": 2022,
+  "expect_any": ["healthcare demand", "supply chains", "anxiety", "preventive measures"]
+}

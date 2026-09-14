@@ -1,0 +1,7 @@
+{
+  "name": "Bank panic 2023",
+  "seed_text": "A mid-sized bank fails after depositors withdraw funds in panic and regulators seize its assets",
+  "lang": "en",
+  "seed": 2023,
+  "expect_any": ["borrowing costs", "investment slows", "credit", "oversight"]
+}

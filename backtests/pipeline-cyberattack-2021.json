@@ -1,0 +1,7 @@
+{
+  "name": "Pipeline cyberattack 2021",
+  "seed_text": "Hackers shut down a major fuel pipeline and the government declares a supply emergency",
+  "lang": "en",
+  "seed": 2021,
+  "expect_any": ["budgets tighten", "shortfall", "intervention", "dissatisfaction"]
+}
