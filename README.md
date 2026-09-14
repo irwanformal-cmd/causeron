@@ -21,10 +21,6 @@
 
 ---
 
-## Demo
-
-![Demo](assets/demo-web.gif)
-
 ## English
 
 **Riak** turns a piece of text (a news story, a policy draft, a decision, a
