@@ -1,0 +1,7 @@
+{
+  "name": "Hospital crunch 2021",
+  "seed_text": "Hospitals postpone non-urgent care as wards fill beyond capacity during an outbreak",
+  "lang": "en",
+  "seed": 2021,
+  "expect_any": ["healthcare demand", "supply chains", "anxiety", "preventive measures"]
+}

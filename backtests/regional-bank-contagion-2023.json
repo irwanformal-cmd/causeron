@@ -1,0 +1,7 @@
+{
+  "name": "Regional bank contagion 2023",
+  "seed_text": "Depositors pull funds from regional lenders after two bank failures rattle markets",
+  "lang": "en",
+  "seed": 2023,
+  "expect_any": ["borrowing costs", "credit", "oversight", "investment slows"]
+}
