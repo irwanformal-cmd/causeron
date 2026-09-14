@@ -292,5 +292,44 @@ class TestTurboBuild(unittest.TestCase):
         self.assertEqual([n["text"] for n in a["nodes"]], [n["text"] for n in b["nodes"]])
 
 
+class TestProvenance(unittest.TestCase):
+    """Node provenance: every node records which author wrote its text."""
+
+    def test_offline_nodes_labelled_rule_and_seed(self):
+        web = causal.build_web("fuel prices rise sharply", 5,
+                               {"branching": 2, "depth": 2, "max_nodes": 40}, lang="en")
+        for n in web["nodes"]:
+            if n["type"] == "root":
+                self.assertEqual(n.get("provenance"), "seed")
+            else:
+                self.assertEqual(n.get("provenance"), "rule")
+
+    def test_llm_accepted_text_labelled_llm(self):
+        saved = causal._use_llm
+        causal._use_llm = lambda fn, *a: (
+            [[{"text": "household budgets tighten under fuel costs",
+               "mechanism": "direct effect", "temporal_relation": "immediate",
+               "scale": "group", "domain": "economic", "likelihood": 0.8,
+               "relation": "leads_to"}]]
+            if getattr(fn, "__name__", "") == "batch_expand" else None)
+        try:
+            web = causal.build_web("fuel prices rise sharply", 5,
+                                   {"branching": 2, "depth": 1, "max_nodes": 20}, lang="en")
+            provs = {n.get("provenance") for n in web["nodes"] if n["type"] != "root"}
+            self.assertIn("llm", provs)
+        finally:
+            causal._use_llm = saved
+
+    def test_predict_reports_provenance_summary(self):
+        web = causal.build_web("fuel prices rise sharply", 5,
+                               {"branching": 2, "depth": 2, "max_nodes": 40}, lang="en")
+        pred = causal.predict(web, lang="en")
+        total = sum(pred["provenance_summary"].values())
+        nonroots = sum(1 for n in web["nodes"] if n["type"] != "root")
+        self.assertEqual(total, nonroots)
+        for o in pred["top_outcomes"]:
+            self.assertIn(o.get("provenance"), ("rule", "llm", "user", "seed", "unknown"))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

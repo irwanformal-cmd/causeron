@@ -916,6 +916,11 @@ def build_web(seed_text: str, seed: int, config: dict | None = None, lang: str =
             node["assumptions"] = cand.get("assumptions")
             node["operator"] = cand.get("operator")
             node["metadata"] = {"confidence": cand.get("confidence"), "source": cand.get("source")}
+            # provenance: which author wrote the text that survived validation
+            # ("llm" = proposed by the LLM and accepted by the engine gate,
+            # "rule" = produced by the rule-based knowledge base).
+            # Set on both add_node variants below; predict() never touches it.
+            node["provenance"] = cand.get("source") or "rule"
         else:
             # root/seed node: initialise quantitative state (every value an assumption)
             node["state"] = mech.init_state(_seed_spec(text))
@@ -930,6 +935,9 @@ def build_web(seed_text: str, seed: int, config: dict | None = None, lang: str =
             node["assumptions"] = None
             node["operator"] = None
             node["metadata"] = {"source": "seed"}
+            # intervention nodes are user-authored; provenance "user".
+            # (seed roots keep "seed"; set just below.)
+            node["provenance"] = "user" if type_ == "intervention" else "seed"
         nodes.append(node)
         node_by_id[nid] = node
         return nid
@@ -1139,14 +1147,24 @@ def predict(web: dict, lang: str = "en") -> dict:
         key=lambda n: -n["probability"],
     )
     top = ranked[:6]
+    # provenance summary: counts per author over non-root nodes, so callers
+    # (server, UI, paper) can report e.g. "8 rule, 2 llm" without scanning.
+    # Nodes predating this field (old saved projects) count as "unknown".
+    prov_counts = {"rule": 0, "llm": 0, "user": 0, "seed": 0, "unknown": 0}
+    for n in web["nodes"]:
+        if n["type"] in ("root",):
+            continue
+        prov_counts[n.get("provenance") or "unknown"] = prov_counts.get(n.get("provenance") or "unknown", 0) + 1
     return {
         "most_likely_chain": [c for c in chain],
         "confidence": round((ranked[0]["probability"] if ranked else 0.0), 3),
         "feedback_loop": feedback,
         "timeline": timeline,
         "horizon_days": timeline[-1]["day"] if timeline else 0,
+        "provenance_summary": {k: v for k, v in prov_counts.items() if v},
         "top_outcomes": [
-            {"id": n["id"], "text": n["text"], "probability": round(n["probability"], 3)}
+            {"id": n["id"], "text": n["text"], "probability": round(n["probability"], 3),
+             "provenance": n.get("provenance") or "unknown"}
             for n in top
         ],
         "summary": _summarize(web, chain_nodes, lang),
@@ -1307,6 +1325,11 @@ def apply_interventions(web: dict, interventions: list[dict], rng: random.Random
             node["assumptions"] = cand.get("assumptions")
             node["operator"] = cand.get("operator")
             node["metadata"] = {"confidence": cand.get("confidence"), "source": cand.get("source")}
+            # provenance: which author wrote the text that survived validation
+            # ("llm" = proposed by the LLM and accepted by the engine gate,
+            # "rule" = produced by the rule-based knowledge base).
+            # Set on both add_node variants below; predict() never touches it.
+            node["provenance"] = cand.get("source") or "rule"
         else:
             # root/seed node: initialise quantitative state (every value an assumption)
             node["state"] = mech.init_state(_seed_spec(text))
@@ -1321,6 +1344,9 @@ def apply_interventions(web: dict, interventions: list[dict], rng: random.Random
             node["assumptions"] = None
             node["operator"] = None
             node["metadata"] = {"source": "seed"}
+            # intervention nodes are user-authored; provenance "user".
+            # (seed roots keep "seed"; set just below.)
+            node["provenance"] = "user" if type_ == "intervention" else "seed"
         nodes.append(node)
         node_by_id[nid] = node
         return nid
