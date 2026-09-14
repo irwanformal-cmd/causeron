@@ -1,0 +1,7 @@
+{
+  "name": "Rate shock 2022",
+  "seed_text": "The central bank doubles interest rates overnight to fight runaway inflation",
+  "lang": "en",
+  "seed": 2022,
+  "expect_any": ["cost of living", "borrowing costs", "investment slows", "budget pressure"]
+}

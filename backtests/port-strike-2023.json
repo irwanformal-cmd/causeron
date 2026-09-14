@@ -1,0 +1,7 @@
+{
+  "name": "Port strike 2023",
+  "seed_text": "Dockworkers shut down major container ports and shipping lines reroute vessels",
+  "lang": "en",
+  "seed": 2023,
+  "expect_any": ["delivery costs", "alternatives", "congestion", "emissions"]
+}

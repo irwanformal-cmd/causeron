@@ -1,0 +1,7 @@
+{
+  "name": "Pension reform protests 2023",
+  "seed_text": "The government raises the retirement age and unions call for mass demonstrations",
+  "lang": "en",
+  "seed": 2023,
+  "expect_any": ["realign", "strain", "priorities shift", "trust"]
+}
