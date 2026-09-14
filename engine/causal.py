@@ -1129,10 +1129,19 @@ def predict(web: dict, lang: str = "en") -> dict:
         timeline.append({"id": cid, "text": nodes[cid]["text"], "day": int(day)})
 
     chain_nodes = [nodes[c] for c in chain]
-    top = leaves[:6]
+    # Top outcomes rank ALL non-root nodes by probability, not just leaves.
+    # Rationale: in a real episode the outcome that materialises usually sits
+    # mid-chain (e.g. "healthcare demand surges" precedes its knock-on effects),
+    # so a leaves-only ranking systematically drops the engine's best predictions.
+    # Roots are excluded: they restate the input scenario rather than predicting it.
+    ranked = sorted(
+        (n for n in web["nodes"] if n["type"] not in ("root",)),
+        key=lambda n: -n["probability"],
+    )
+    top = ranked[:6]
     return {
         "most_likely_chain": [c for c in chain],
-        "confidence": round((leaves[0]["probability"] if leaves else 0.0), 3),
+        "confidence": round((ranked[0]["probability"] if ranked else 0.0), 3),
         "feedback_loop": feedback,
         "timeline": timeline,
         "horizon_days": timeline[-1]["day"] if timeline else 0,
