@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "If you use Riak in your research, please cite it as below."
+message: "If you use Causeron in your research, please cite it as below."
 type: software
-title: "Riak: Self-contained Causal Prediction Engine"
+title: "Causeron: Self-contained Causal Prediction Engine"
 authors:
   - github: irwanformal-cmd
 abstract: >-
-  Riak turns a piece of text (a news story, a policy draft, a decision, a
+  Causeron turns a piece of text (a news story, a policy draft, a decision, a
   "what if" question) into a branching cause-effect web of events, then
   computes the most likely outcome chain through it. It runs with zero
   dependencies (Python standard library only) using a deterministic

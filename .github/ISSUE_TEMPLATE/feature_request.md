@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for Riak
+about: Suggest an idea for Causeron
 title: "[Feature] "
 labels: enhancement
 ---

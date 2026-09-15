@@ -1,9 +1,9 @@
-# Riak — zero-dependency causal prediction engine
-# Build:  docker build -t riak .
-# Run:    docker run -p 8000:8000 -v riak-data:/app/data riak
+# Causeron — zero-dependency causal prediction engine
+# Build:  docker build -t causeron .
+# Run:    docker run -p 8000:8000 -v causeron-data:/app/data causeron
 # With LLM (optional):
 #         docker run -p 8000:8000 -e LLM_API_KEY=... -e LLM_BASE_URL=... \
-#                    -e LLM_MODEL_NAME=... -v riak-data:/app/data riak
+#                    -e LLM_MODEL_NAME=... -v causeron-data:/app/data causeron
 FROM python:3.12-slim
 
 WORKDIR /app
@@ -18,8 +18,8 @@ COPY backtests ./backtests
 COPY backtest.py ./
 COPY test_*.py ./
 
-ENV RIAK_HOST=0.0.0.0 \
-    RIAK_PORT=8000
+ENV CAUSERON_HOST=0.0.0.0 \
+    CAUSERON_PORT=8000
 
 # projects + llm_config persist here — mount a volume to keep them
 VOLUME ["/app/data"]

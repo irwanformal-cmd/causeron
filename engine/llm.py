@@ -1,14 +1,14 @@
 """Optional LLM integration using only the standard library.
 
 Works with any OpenAI-compatible endpoint and a few common auth schemes, so you
-can point Riak at OpenAI, DeepSeek, Qwen/DashScope, Ollama, LM Studio, or any
+can point Causeron at OpenAI, DeepSeek, Qwen/DashScope, Ollama, LM Studio, or any
 custom provider (including a self-hosted harness).
 
 Configuration can come from two places, merged in priority order:
   1. runtime config (set from the web UI, persisted to data/llm_config.json)
   2. environment variables (see .env.example)
 
-If nothing is configured, every function returns None and Riak transparently
+If nothing is configured, every function returns None and Causeron transparently
 falls back to its deterministic rule-based engine — the app always runs.
 """
 
@@ -515,7 +515,7 @@ def _parse_batch_outcomes(reply: str, n_events: int, n: int) -> list[list[dict]]
 
 
 CAUSAL_SPEC = """\
-You are RIAK, a physics- and mathematics-constrained causal simulation engine.
+You are CAUSERON, a physics- and mathematics-constrained causal simulation engine.
 
 YOUR ONLY JOB PER CALL: list the IMMEDIATE plausible next states of the CURRENT node. You answer
 ONE question: "Given this exact current state and its history, what can happen NEXT, one causal
@@ -830,7 +830,7 @@ def build_subtree(root_text: str, topic: str, depth: int, branching: int,
                 f"near-certain effects, 0.4-0.7 for plausible ones); polarity -1 (bad) to 1 (good); relation one of "
                 f"causes|amplifies|reduces|prevents|triggers; fewer children is fine when "
                 f"uncertain; reach the full {depth} levels.")
-    reply = chat([{"role": "system", "content": "You are RIAK, a causal simulation engine. Output STRICT JSON only."},
+    reply = chat([{"role": "system", "content": "You are CAUSERON, a causal simulation engine. Output STRICT JSON only."},
                   {"role": "user", "content": user}],
                  temperature=0.4, max_tokens=6000, timeout=180.0)
     if not reply:

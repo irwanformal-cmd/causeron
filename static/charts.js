@@ -1,4 +1,4 @@
-/* Minimal dependency-free canvas charting for Riak. */
+/* Minimal dependency-free canvas charting for Causeron. */
 
 const CHART_PAL = window.PALETTE || {};
 

@@ -1,12 +1,14 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="Riak logo" width="120">
+<img src="assets/logo.png" alt="Causeron logo" width="120">
 
-# Riak
+# Causeron
 
 **A self-contained causal prediction engine.**
 
-*Paste a scenario. Riak maps the web of consequences and computes the most likely outcome chain.*
+*Paste a scenario. Causeron maps the web of consequences and computes the most likely outcome chain.*
+
+An open-source project by [**Riak**](https://riak.space) — AI software for exploring complex systems.
 
 [![tests](https://github.com/irwanformal-cmd/riak/actions/workflows/test.yml/badge.svg)](https://github.com/irwanformal-cmd/riak/actions/workflows/test.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -15,7 +17,7 @@
 
 [English](#english) · [Bahasa Indonesia](#bahasa-indonesia) · [中文](#中文)
 
-![Riak demo: paste a scenario, get a causal web, compare interventions](assets/demo-web.gif)
+![Causeron demo: paste a scenario, get a causal web, compare interventions](assets/demo-web.gif)
 
 </div>
 
@@ -23,7 +25,7 @@
 
 ## English
 
-**Riak** turns a piece of text (a news story, a policy draft, a decision, a
+**Causeron** turns a piece of text (a news story, a policy draft, a decision, a
 "what if" question) into a branching **cause → effect web** of events, then
 computes the most likely outcome chain through it.
 
@@ -63,7 +65,7 @@ reasoning with any OpenAI-compatible LLM when you provide a key.
 
 ### Key properties
 
-| | Riak |
+| | Causeron |
 |---|---|
 | Runs offline / no API key | ✅ deterministic rule-based engine |
 | LLM integration | ✅ optional, any OpenAI-compatible endpoint |
@@ -94,7 +96,7 @@ cp .env.example .env       # edit and add LLM_API_KEY / LLM_BASE_URL / LLM_MODEL
 python3 server.py
 ```
 
-Without a provider, Riak runs fully offline on its deterministic rule-based
+Without a provider, Causeron runs fully offline on its deterministic rule-based
 engine.
 
 ### Architecture
@@ -141,7 +143,7 @@ Heavy endpoints (`/api/projects`, `/api/simulate`, `/api/develop`) accept
 `{"async": true}` which returns `202 {job_id}`. Poll `GET /api/jobs/:id` for
 the result.
 Requests are limited to 2 MB and rate-limited per IP (default 600/min,
-`RIAK_RATE_LIMIT`). Logs go to stderr and a rotating `server.log`.
+`CAUSERON_RATE_LIMIT`). Logs go to stderr and a rotating `server.log`.
 
 ### Custom knowledge-base packs
 
@@ -166,14 +168,14 @@ All suites run in CI via GitHub Actions (Python 3.9 + 3.12).
 ### Docker
 
 ```bash
-docker build -t riak .
-docker run -p 8000:8000 -v riak-data:/app/data riak
+docker build -t causeron .
+docker run -p 8000:8000 -v causeron-data:/app/data causeron
 # open http://127.0.0.1:8000
 ```
 
 ### Roadmap
 
-Where Riak is heading. Contributions and discussion welcome:
+Where Causeron is heading. Contributions and discussion welcome:
 
 - **Decision mode:** frame a question as A-vs-B and get a scored
   recommendation, not just two predictions
@@ -196,7 +198,7 @@ MIT. Third-party assets (KaTeX, fonts) are credited in [NOTICE](NOTICE).
 
 ## Bahasa Indonesia
 
-**Riak** mengubah sebuah teks (berita, draf kebijakan, keputusan, pertanyaan
+**Causeron** mengubah sebuah teks (berita, draf kebijakan, keputusan, pertanyaan
 "bagaimana jika") menjadi **jaring sebab → akibat** yang bercabang, lalu
 menghitung rantai hasil yang paling mungkin terjadi.
 
@@ -260,7 +262,7 @@ MIT. Aset pihak ketiga (KaTeX, font) dicatat di [NOTICE](NOTICE).
 
 ## 中文
 
-**Riak** 把一段文本（新闻、政策草案、决策、"如果……会怎样"的问题）转化成
+**Causeron** 把一段文本（新闻、政策草案、决策、"如果……会怎样"的问题）转化成
 分支式的**因果事件网络**，然后计算出最可能的结果链。
 
 它开箱即用，**零依赖、零 API 密钥**，基于确定性规则因果引擎运行。如果你

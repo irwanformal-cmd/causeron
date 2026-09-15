@@ -1299,7 +1299,7 @@ class NetworkRenderer {
     ctx.restore();
     const a = document.createElement("a");
     a.href = this.canvas.toDataURL("image/png");
-    a.download = "riak-causal-web.png";
+    a.download = "causeron-causal-web.png";
     a.click();
     ctx.putImageData(img, 0, 0);
     this._draw();

@@ -24,7 +24,7 @@ import urllib.parse
 import urllib.request
 import urllib.robotparser
 
-USER_AGENT = "Riak/1.0 (+https://github.com/riak-engine/riak)"
+USER_AGENT = "Causeron/1.0 (+https://github.com/irwanformal-cmd/riak)"
 MAX_BYTES = 1024 * 1024          # 1 MB body cap
 MAX_REDIRECTS = 3
 TIMEOUT = 10                     # seconds per request

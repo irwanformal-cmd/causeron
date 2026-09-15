@@ -1,6 +1,6 @@
-# Riak brand assets
+# Causeron brand assets
 
-The Riak logo — *a cause drops in, event nodes ripple outward through the web.*
+The Causeron logo — *a cause drops in, event nodes ripple outward through the web.*
 
 | File | Use |
 |---|---|

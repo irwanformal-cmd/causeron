@@ -1,5 +1,5 @@
 /* ============================================================
-   Riak app — subtle cursor ripple layer + micro-interactions
+   Causeron app — subtle cursor ripple layer + micro-interactions
    Purely presentational. No engine / logic touches.
    ============================================================ */
 (() => {

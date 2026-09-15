@@ -1,7 +1,7 @@
-Riak — third-party assets and attributions
+Causeron — third-party assets and attributions
 ==========================================
 
-Riak itself is original code released under the MIT License (see LICENSE).
+Causeron itself is original code released under the MIT License (see LICENSE).
 It has NO runtime dependencies beyond the Python 3.9+ standard library.
 
 The following third-party assets are loaded at runtime via CDN:
@@ -10,7 +10,7 @@ The following third-party assets are loaded at runtime via CDN:
    - Copyright (c) 2013-2020 Khan Academy and other contributors
    - License: MIT (https://github.com/KaTeX/KaTeX/blob/main/LICENSE)
    - Used for: rendering mathematical formulas in the Math tab
-   - If you redistribute Riak with KaTeX bundled (instead of CDN),
+   - If you redistribute Causeron with KaTeX bundled (instead of CDN),
      include KaTeX's LICENSE file.
 
 2. Google Fonts: Sora and Inter (https://fonts.google.com)

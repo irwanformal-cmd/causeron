@@ -1,4 +1,4 @@
-"""Deterministic analysis/aggregation layer for the Riak report.
+"""Deterministic analysis/aggregation layer for the Causeron report.
 
 ONE pass over the existing causal web + prediction + ensemble output.
 Nothing here invents numbers: every metric is either

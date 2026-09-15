@@ -42,7 +42,7 @@ class TestAPI(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # isolate storage: temp data dir + a private projects dict
-        cls._tmp = tempfile.TemporaryDirectory(prefix="riak-test-")
+        cls._tmp = tempfile.TemporaryDirectory(prefix="causeron-test-")
         cls._orig_data_dir = server.DATA_DIR
         cls._orig_llm_config_path = server.LLM_CONFIG_PATH
         server.DATA_DIR = cls._tmp.name
@@ -288,7 +288,7 @@ class TestAPI(unittest.TestCase):
         self.assertEqual(body["format"], "html")
         self.assertTrue(body["filename"].endswith(".html"))
         self.assertIn("<!doctype html>", body["content"].lower())
-        self.assertIn("Riak", body["content"])
+        self.assertIn("Causeron", body["content"])
 
     def test_async_job_pattern(self):
         status, body = self._post("/api/projects", {
@@ -364,7 +364,7 @@ class TestAPI(unittest.TestCase):
         self.assertTrue(server._origin_ok("http://127.0.0.1:8000", "127.0.0.1:8000"))
         self.assertFalse(server._origin_ok("http://evil.example", "127.0.0.1:8000"))
         self.assertFalse(server._origin_ok("not a url", "127.0.0.1:8000"))
-        # without RIAK_TOKEN configured everything is allowed (localhost mode)
+        # without CAUSERON_TOKEN configured everything is allowed (localhost mode)
         self.assertTrue(server._auth_ok(None))
         self.assertTrue(server._auth_ok("Bearer anything"))
 

@@ -1,4 +1,4 @@
-# Contributing to Riak
+# Contributing to Causeron
 
 Terima kasih sudah mau berkontribusi! · Thanks for wanting to contribute!
 This file is bilingual-ish: English first, ringkasan Bahasa di bawah.

@@ -1,4 +1,4 @@
-# Senario untuk Riak: Pasar Aplikasi Mobile Baru
+# Senario untuk Causeron: Pasar Aplikasi Mobile Baru
 
 ## Deskripsi Skenario
 Sebagai pemilik aplikasi mobile untuk layanan pengiriman makanan, kita akan merancang strategi peluncuran di kota besar. Skenario ini mengeksplorasi dampak dari berbagai faktor pada adoption pengguna dan retained users.
@@ -49,7 +49,7 @@ Sebagai pemilik aplikasi mobile untuk layanan pengiriman makanan, kita akan mera
 - -20% cancellations di awal session
 - Customer satisfaction score naik dari 3.5 ke 4.2/5
 
-## Cara Men-test di Riak
+## Cara Men-test di Causeron
 
 1. **Buka:** http://127.0.0.1:8000
 2. **Pada tab "Step 1 - Describe the scenario":**

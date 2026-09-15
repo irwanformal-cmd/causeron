@@ -1,6 +1,6 @@
-# Riak — Landing Page
+# Causeron — Landing Page
 
-Standalone marketing / product-experience site for Riak. **Completely separate
+Standalone marketing / product-experience site for Causeron. **Completely separate
 from the main application** (`server.py` on `:8000`) — no shared state, no
 changes to the engine, API, or existing UI.
 
@@ -46,7 +46,7 @@ Zero-build, zero-dependency static site — same philosophy as the main app:
 
 ## Links
 
-“Try Riak” buttons point to the app at `http://127.0.0.1:8000`.
-GitHub links use the same placeholder URL as the main README
-(`https://github.com/USERNAME/riak`) — swap in the real repository URL when
-available.
+“Try Causeron” buttons point to the app at `http://127.0.0.1:8000`.
+GitHub links point to the real repository
+(`https://github.com/irwanformal-cmd/riak`). When the repository is renamed to
+`causeron` on GitHub, old URLs keep working via GitHub's automatic redirects.

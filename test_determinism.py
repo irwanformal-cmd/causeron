@@ -1,4 +1,4 @@
-"""Determinism test suite — Riak advertises "deterministic per seed".
+"""Determinism test suite — Causeron advertises "deterministic per seed".
 
 Run:  python3 test_determinism.py
 

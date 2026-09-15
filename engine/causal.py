@@ -242,7 +242,7 @@ _LLM_CHUNK = 2
 def _llm_workers() -> int:
     """Concurrent LLM calls allowed during expansion/compare (env-tunable)."""
     try:
-        return max(1, int(os.environ.get("RIAK_LLM_WORKERS", "4")))
+        return max(1, int(os.environ.get("CAUSERON_LLM_WORKERS", "4")))
     except ValueError:
         return 4
 _llm_calls = 0
@@ -746,7 +746,7 @@ def _expand_many(items: list[tuple[str, str, str]], n: int, rng: random.Random, 
     texts = [t for _, t, _ in items]
     contexts = [c for _, _, c in items]
     raw_lists: list[list | None] = [None] * len(items)
-    # Expansion chunks run in PARALLEL (RIAK_LLM_WORKERS, default 4): each chunk
+    # Expansion chunks run in PARALLEL (CAUSERON_LLM_WORKERS, default 4): each chunk
     # is an independent LLM call, and on slow reasoning providers a level with
     # many events used to cost N_chunks × call latency sequentially. Same
     # prompts, same validation — just concurrent. Set workers to 1 to restore

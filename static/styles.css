@@ -1,6 +1,6 @@
 /* ============================================================
-   Riak app — causal ripple design system
-   Shares design DNA with the Riak landing page:
+   Causeron app — causal ripple design system
+   Shares design DNA with the Causeron landing page:
    deep ocean surfaces · cyan light · Manrope · calm motion
    ============================================================ */
 
@@ -35,7 +35,7 @@
 }
 
 :root[data-theme="dark"] {
-  /* Deep ocean — primary Riak theme */
+  /* Deep ocean — primary Causeron theme */
   --bg: #030D16;
   --bg-2: #051523;
   --panel: rgba(8, 32, 50, .55);

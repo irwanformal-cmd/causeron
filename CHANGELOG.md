@@ -1,13 +1,22 @@
 # Changelog
 
-All notable changes to Riak are documented here.
+All notable changes to Causeron are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Project renamed: Riak → Causeron.** Causeron is the flagship open-source
+  project of [Riak](https://riak.space). All user-facing branding, UI text,
+  docs, and exports now use the Causeron name
+- Environment variables renamed `RIAK_*` → `CAUSERON_*`
+  (`CAUSERON_PORT`, `CAUSERON_HOST`, `CAUSERON_TOKEN`, `CAUSERON_RATE_LIMIT`,
+  `CAUSERON_RATE_LIMIT_HEAVY`, `CAUSERON_LLM_WORKERS`, `CAUSERON_LOG_LEVEL`,
+  `CAUSERON_LANDING_PORT`). Update your `.env` / deployment config once
+
 ### Added
 - **Parallel LLM calls**: expansion chunks within a level and A/B compare
-  scenarios now run concurrently (RIAK_LLM_WORKERS, default 4) — a level
+  scenarios now run concurrently (CAUSERON_LLM_WORKERS, default 4) — a level
   with many events costs one chunk's latency instead of N, and 4 scenarios
   ≈ the wall-time of 1 on providers that parallelize
 - **Turbo build mode** (opt-in checkbox): one parallel LLM call per root
@@ -20,7 +29,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   through the async job record; the renderer grows new nodes beside their
   parents without moving existing ones. After the build the web stays on
   screen next to the intervention setup
-- **URL import**: paste a link, Riak fetches the page and fills the scenario
+- **URL import**: paste a link, Causeron fetches the page and fills the scenario
   box (title auto-fills the project name). SSRF-hardened: http/https only,
   private/loopback/link-local/reserved IPs rejected at every redirect hop,
   1 MB cap, 10 s timeout, robots.txt honoured, heavy-tier rate limited

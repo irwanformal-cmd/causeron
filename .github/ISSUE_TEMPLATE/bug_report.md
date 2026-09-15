@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Something in Riak is broken
+about: Something in Causeron is broken
 title: "[Bug] "
 labels: bug
 ---
@@ -19,7 +19,7 @@ labels: bug
 **Environment**
 - OS:
 - Python version (`python3 --version`):
-- Riak version (sidebar footer):
+- Causeron version (sidebar footer):
 - LLM configured? (yes/no — do NOT paste your API key):
 
 **Logs / screenshots**

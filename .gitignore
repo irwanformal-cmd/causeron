@@ -17,6 +17,6 @@ data/
 likegrowtopia/
 ---
 
-# Local forks for PRs (not part of Riak)
+# Local forks for PRs (not part of Causeron)
 awesome-python/
 awesome-causal-inference/

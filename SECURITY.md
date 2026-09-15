@@ -11,7 +11,7 @@ You will get a first response within a few days.
 
 ## Security model — read before deploying
 
-Riak is designed as a **local, single-user application**. The defaults are
+Causeron is designed as a **local, single-user application**. The defaults are
 safe for that use; exposing it to a network needs extra care.
 
 **Stored secrets.** The LLM API key is stored in **plaintext** at
@@ -27,17 +27,17 @@ accordingly, and never commit it.
   (no CORS headers are sent), which blocks "drive-by" attacks from
   malicious websites against your local instance.
 - Per-IP rate limits, plus a stricter tier for endpoints that spend LLM
-  quota (`RIAK_RATE_LIMIT_HEAVY`, default 30/min).
+  quota (`CAUSERON_RATE_LIMIT_HEAVY`, default 30/min).
 - 2 MB request-body cap.
 
-**Exposing Riak to a network (multi-user / public demo)**
+**Exposing Causeron to a network (multi-user / public demo)**
 
-1. Set a strong `RIAK_TOKEN` — every `/api/*` call then requires
+1. Set a strong `CAUSERON_TOKEN` — every `/api/*` call then requires
    `Authorization: Bearer <token>`. The server prints a loud warning if
    you bind a non-localhost host without it.
 2. Put it behind TLS (a reverse proxy such as Caddy/nginx) — the token is
    sent as a header and must not travel over plain HTTP.
-3. Review `RIAK_RATE_LIMIT` / `RIAK_RATE_LIMIT_HEAVY` for your budget.
+3. Review `CAUSERON_RATE_LIMIT` / `CAUSERON_RATE_LIMIT_HEAVY` for your budget.
 4. Treat the LLM provider as a cost surface: anyone who can reach the API
    can spend your quota within the rate limits.
 

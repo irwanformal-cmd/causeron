@@ -1,5 +1,5 @@
 /* ============================================================
-   Riak landing — interaction engine
+   Causeron landing — interaction engine
    cursor-driven water ripples · scrollytelling · causal graphs
    ============================================================ */
 (() => {
@@ -394,7 +394,7 @@ const introCaptions = [
   [0.40, "The ripple branches — roads empty, wallets breathe."],
   [0.52, "Second-order effects surface: jobs within reach, income freed up."],
   [0.64, "The branches reconverge on the city itself."],
-  [0.78, "One sentence → eight connected futures. That is Riak."],
+  [0.78, "One sentence → eight connected futures. That is Causeron."],
 ];
 let introCaptionIdx = -1;
 
@@ -458,7 +458,7 @@ function tickBranch() {
     branchNoteIdx = idx;
     branchNotes.forEach((n, i) => n.classList.toggle("is-on", i === idx));
   }
-  branchCaption.textContent = p > 0.9 ? "Branches that meet again compound — Riak scores them together." :
+  branchCaption.textContent = p > 0.9 ? "Branches that meet again compound — Causeron scores them together." :
     "Scroll to grow the branches.";
 }
 

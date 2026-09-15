@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Riak logo · a cause drops in, event nodes ripple outward through the web -->
+  <!-- Causeron logo · a cause drops in, event nodes ripple outward through the web -->
   <!-- Brand color: #136F8F (ocean teal) -->
   <circle cx="50" cy="50" r="20" stroke="#136F8F" stroke-width="5" opacity=".85"
           stroke-linecap="round" stroke-dasharray="102 24" transform="rotate(-30 50 50)"/>

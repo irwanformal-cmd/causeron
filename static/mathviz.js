@@ -1,4 +1,4 @@
-/* Riak · Advanced Mathematical Reasoning Visualizer.
+/* Causeron · Advanced Mathematical Reasoning Visualizer.
  *
  * Reads the *existing* prediction/causal result (web + prediction, already
  * present in the frontend) and renders it as ONE continuous mathematical

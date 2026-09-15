@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Riak · Causal Prediction Engine</title>
+  <title>Causeron · Causal Prediction Engine</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <div class="brand">
       <span class="logo"><svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="5" opacity=".85" stroke-linecap="round" stroke-dasharray="102 24" transform="rotate(-30 50 50)"/><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="4.4" opacity=".55" stroke-linecap="round" stroke-dasharray="166 35" transform="rotate(70 50 50)"/><circle cx="50" cy="50" r="43" stroke="currentColor" stroke-width="3.6" opacity=".3" stroke-linecap="round" stroke-dasharray="228 43" transform="rotate(165 50 50)"/><circle cx="50" cy="50" r="8.5" fill="currentColor"/><circle cx="68.8" cy="43.2" r="4.6" fill="currentColor"/><circle cx="29.4" cy="25.5" r="4" fill="currentColor" opacity=".85"/><circle cx="39.1" cy="80.1" r="3.6" fill="currentColor" opacity=".7"/><circle cx="57.5" cy="7.7" r="3" fill="currentColor" opacity=".5"/></svg></span>
       <div class="brand-text">
-        <h1>riak</h1>
+        <h1>causeron</h1>
       </div>
     </div>
     <div class="topbar-right">
@@ -59,13 +59,13 @@
           </select>
         </label>
       </section>
-      <footer class="sidebar-footer" title="Riak version 1.0.0">riak v1.0.0 · causal prediction engine</footer>
+      <footer class="sidebar-footer" title="Causeron version 1.0.0">causeron v1.0.0 · causal prediction engine</footer>
     </aside>
 
     <section class="content">
       <section id="step-build" class="panel step">
         <h2><span class="stepnum">1</span> <span data-i18n="buildTitle">Describe the scenario</span></h2>
-        <p class="hint" data-i18n="buildHint">Paste a scenario, a decision, or a “what if” question. Riak maps out the web of consequences · what this causes, and what those cause next.</p>
+        <p class="hint" data-i18n="buildHint">Paste a scenario, a decision, or a “what if” question. Causeron maps out the web of consequences · what this causes, and what those cause next.</p>
         <div class="import-row">
           <input id="import-url" type="url" data-i18n-ph="importUrlPh" class="import-url">
           <button id="import-fetch" class="btn btn-sm" data-i18n="importFetch">Fetch</button>
@@ -156,7 +156,7 @@
           <div class="interact-layout">
             <div class="agent-pane">
               <h3 data-i18n="events">Events</h3>
-              <p class="hint hint-inline" data-i18n="explainHint">Pick an event to discuss it with Riak · it can grow the web around it, and you can edit any node.</p>
+              <p class="hint hint-inline" data-i18n="explainHint">Pick an event to discuss it with Causeron · it can grow the web around it, and you can edit any node.</p>
               <input id="node-search" type="text" class="node-search" data-i18n-ph="searchPh" placeholder="Search events…" autocomplete="off">
               <ul id="node-list" class="agent-list"></ul>
             </div>
@@ -215,7 +215,7 @@
         <h3>◎ <span data-i18n="goalTitle">How can this happen?</span></h3>
         <button id="goal-close" class="btn btn-icon">✕</button>
       </div>
-      <p class="hint" data-i18n="goalHint">Name a desired outcome — Riak reasons backward from it and proposes prerequisite paths. Proposals are hypotheses, not predictions; nothing joins the network unless you add it.</p>
+      <p class="hint" data-i18n="goalHint">Name a desired outcome — Causeron reasons backward from it and proposes prerequisite paths. Proposals are hypotheses, not predictions; nothing joins the network unless you add it.</p>
       <div class="goal-input-row">
         <input id="goal-input" type="text" maxlength="300"
                placeholder="e.g. Air pollution decreases by 40%"
@@ -237,7 +237,7 @@
         <h3 data-i18n="llmSettings">LLM provider settings</h3>
         <button id="settings-close" class="btn btn-icon">✕</button>
       </div>
-      <p class="hint" data-i18n="llmSettingsHint">Connect Riak to any OpenAI-compatible provider · DeepSeek, OpenAI, Qwen, Ollama, or a custom endpoint. Leave empty to stay in offline (rule-based) mode.</p>
+      <p class="hint" data-i18n="llmSettingsHint">Connect Causeron to any OpenAI-compatible provider · DeepSeek, OpenAI, Qwen, Ollama, or a custom endpoint. Leave empty to stay in offline (rule-based) mode.</p>
       <label class="field">Provider
         <select id="llm-provider">
           <option value="custom">Custom</option>
