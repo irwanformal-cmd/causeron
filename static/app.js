@@ -42,6 +42,8 @@ const I18N = {
     repScenario: "Scenario", repEvents: "Events", repLinks: "Causal links", repMaxDepth: "Max depth", repTerminals: "Terminal outcomes", repBranching: "Branching points", repConvergence: "Convergence points", repRuns: "Simulation runs", repSpan: "Temporal span", repNotAvail: "N/A", repCritical: "Critical path", repLength: "Length", repProbability: "Probability", repStability: "Stability", repStructure: "Causal structure", repDepth: "Ripple depth", repDepthN: "Depth {n}", repAvgDepth: "Average depth", repBranch: "Branching", repConverge: "Convergence", repNone: "None in this network", repKeyNodes: "Key nodes", repInfluence: "High influence", repLongest: "Longest path", repComponents: "Components", repTemporal: "Temporal evolution", repScaleSeconds: "scale: seconds", repScaleHours: "scale: hours", repScaleDays: "scale: days", repScaleMonths: "scale: months", repScaleYears: "scale: years", repSim: "Simulation analysis", repSimultaneous: "all events at T+0", repGoal: "Goal backtracking", repGoalPath: "Path", repGoalConn: "Connects at", repGoalNote: "Hypotheses only — not merged into the network unless added from the Goal panel.", repAssump: "Assumptions & uncertainty", repNoSim: "Monte-Carlo ensemble not run for this prediction.", repQualitative: "Qualitative (directional) reasoning — magnitudes and timings are heuristic.",
     compareScenarios: "Compare scenarios", addScenario: "+ Add scenario", runComparison: "Run comparison",
     turbo: "Turbo",
+    cfgSeed: "Seed", cfgBranches: "Branches / event", cfgDepth: "Depth (levels)", cfgMaxNodes: "Max events",
+    verbose: "Verbose",
     comparing: "Running comparison…", compareDone: "Comparison complete.", compareResults: "Scenario comparison",
     scenarioDefault: "Scenario {n}",
     timelineTitle: "Most likely timeline", dayN: "day {n}",
@@ -93,6 +95,8 @@ const I18N = {
     repScenario: "Skenario", repEvents: "Peristiwa", repLinks: "Tautan kausal", repMaxDepth: "Kedalaman maks", repTerminals: "Hasil terminal", repBranching: "Titik cabang", repConvergence: "Titik konvergensi", repRuns: "Run simulasi", repSpan: "Rentang temporal", repNotAvail: "—", repCritical: "Jalur kritis", repLength: "Panjang", repProbability: "Probabilitas", repStability: "Stabilitas", repStructure: "Struktur kausal", repDepth: "Kedalaman causeron", repDepthN: "Kedalaman {n}", repAvgDepth: "Kedalaman rata-rata", repBranch: "Percabangan", repConverge: "Konvergensi", repNone: "Tidak ada di jaringan ini", repKeyNodes: "Node kunci", repInfluence: "Pengaruh tinggi", repLongest: "Jalur terpanjang", repComponents: "Komponen", repTemporal: "Evolusi temporal", repScaleSeconds: "skala: detik", repScaleHours: "skala: jam", repScaleDays: "skala: hari", repScaleMonths: "skala: bulan", repScaleYears: "skala: tahun", repSim: "Analisis simulasi", repSimultaneous: "semua peristiwa di T+0", repGoal: "Penelusuran tujuan", repGoalPath: "Jalur", repGoalConn: "Terhubung di", repGoalNote: "Hanya hipotesis — tidak digabung ke jaringan kecuali ditambahkan dari panel Goal.", repAssump: "Asumsi & ketidakpastian", repNoSim: "Ensemble Monte-Carlo tidak dijalankan untuk prediksi ini.", repQualitative: "Penalaran kualitatif (arah hubungan) — besaran dan waktu bersifat heuristik.",
     compareScenarios: "Bandingkan skenario", addScenario: "+ Tambah skenario", runComparison: "Jalankan perbandingan",
     turbo: "Turbo",
+    cfgSeed: "Seed", cfgBranches: "Cabang / peristiwa", cfgDepth: "Kedalaman (level)", cfgMaxNodes: "Maks peristiwa",
+    verbose: "Detail",
     comparing: "Menjalankan perbandingan…", compareDone: "Perbandingan selesai.", compareResults: "Perbandingan skenario",
     scenarioDefault: "Skenario {n}",
     timelineTitle: "Linimasa paling mungkin", dayN: "hari {n}",
@@ -140,6 +144,8 @@ const I18N = {
     repScenario: "情景", repEvents: "事件", repLinks: "因果连接", repMaxDepth: "最大深度", repTerminals: "终端结果", repBranching: "分支点", repConvergence: "汇聚点", repRuns: "模拟次数", repSpan: "时间跨度", repNotAvail: "—", repCritical: "关键路径", repLength: "长度", repProbability: "概率", repStability: "稳定性", repStructure: "因果结构", repDepth: "涟漪深度", repDepthN: "深度 {n}", repAvgDepth: "平均深度", repBranch: "分支", repConverge: "汇聚", repNone: "此网络中无", repKeyNodes: "关键节点", repInfluence: "高影响力", repLongest: "最长路径", repComponents: "连通分量", repTemporal: "时间演化", repScaleSeconds: "刻度：秒", repScaleHours: "刻度：小时", repScaleDays: "刻度：天", repScaleMonths: "刻度：月", repScaleYears: "刻度：年", repSim: "模拟分析", repSimultaneous: "所有事件均在 T+0", repGoal: "目标回溯", repGoalPath: "路径", repGoalConn: "连接于", repGoalNote: "仅为假设 — 除非在目标面板中确认，否则不会并入网络。", repAssump: "假设与不确定性", repNoSim: "本次预测未运行蒙特卡洛集成。", repQualitative: "定性（方向性）推理 — 数值与时间为启发式估计。",
     compareScenarios: "对比场景", addScenario: "+ 添加场景", runComparison: "运行对比",
     turbo: "极速",
+    cfgSeed: "种子", cfgBranches: "每事件分支", cfgDepth: "深度（层）", cfgMaxNodes: "最大事件数",
+    verbose: "详细",
     comparing: "正在运行对比…", compareDone: "对比完成。", compareResults: "场景对比",
     scenarioDefault: "场景 {n}",
     timelineTitle: "最可能时间线", dayN: "第 {n} 天",
@@ -402,6 +408,21 @@ async function refreshProjects() {
   renderProjects();
 }
 
+// One-click demo for first-time visitors: fill the build form with the
+// first bundled sample and run it, using only the existing build flow.
+async function trySample() {
+  try {
+    const samples = await api("/api/samples");
+    if (!samples || !samples.length) return;
+    const s = samples[0];
+    $("#project-name").value = s.name || "Sample";
+    $("#seed-text").value = s.seed_text || "";
+    $("#step-build").classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    await buildWorld();
+  } catch (e) { toast(e.message, true); }
+}
+
 function projectItem(p) {
   const li = document.createElement("li");
   li.className = state.currentProject && p.id === state.currentProject.id ? "active" : "";
@@ -425,7 +446,13 @@ function renderProjects() {
     const d = document.createElement("div");
     d.className = "project-empty";
     d.textContent = t("noProject");
-    box.appendChild(d); return;
+    box.appendChild(d);
+    const b = document.createElement("button");
+    b.className = "btn btn-ghost btn-block sample-btn";
+    b.textContent = t("samples");
+    b.onclick = trySample;
+    box.appendChild(b);
+    return;
   }
   // show up to 4 projects directly; fold the rest into a "More ▾" dropdown
   const MAX = 4;
@@ -764,6 +791,9 @@ const TRAJ_KIND = {
   phase: "phase", llm: "llm", tool: "tool", derive: "derive",
   llm_done: "done", done: "done", error: "error",
 };
+// Developer mode: hide raw model-prompt rows unless the verbose checkbox is on.
+// Errors are always shown.
+let trajVerbose = false;
 
 function trajBadge(kind) {
   const k = TRAJ_KIND[kind] || "other";
@@ -781,6 +811,7 @@ function renderTrajectory(rec) {
     let html = "";
     for (let i = state.trajSeen; i < events.length; i++) {
       const ev = events[i];
+      if (!trajVerbose && ev.kind === "llm" && ev.ok !== false) continue;
       const cls = i === events.length - 1 ? "active" : "done";
       const detail = ev.ok === false || ev.kind === "error"
         ? `<span class="traj-err-detail">${escapeHtml(ev.detail || "")}</span>`
@@ -1649,6 +1680,8 @@ function bindEvents() {
   $("#run-btn").onclick = runSimulation;
   const _tc = $("#trajectory-clear");
   if (_tc) _tc.onclick = () => { const l = $("#trajectory-list"); if (l) l.innerHTML = ""; const c = $("#trajectory-count"); if (c) c.textContent = ""; };
+  const _tv = $("#traj-verbose");
+  if (_tv) _tv.onchange = () => { trajVerbose = _tv.checked; };
   $("#new-project-btn").onclick = () => {
     $("#step-setup").classList.add("hidden");
     $("#results").classList.add("hidden");

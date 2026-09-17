@@ -14,7 +14,7 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <span class="logo"><svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="5" opacity=".85" stroke-linecap="round" stroke-dasharray="102 24" transform="rotate(-30 50 50)"/><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width="4.4" opacity=".55" stroke-linecap="round" stroke-dasharray="166 35" transform="rotate(70 50 50)"/><circle cx="50" cy="50" r="43" stroke="currentColor" stroke-width="3.6" opacity=".3" stroke-linecap="round" stroke-dasharray="228 43" transform="rotate(165 50 50)"/><circle cx="50" cy="50" r="8.5" fill="currentColor"/><circle cx="68.8" cy="43.2" r="4.6" fill="currentColor"/><circle cx="29.4" cy="25.5" r="4" fill="currentColor" opacity=".85"/><circle cx="39.1" cy="80.1" r="3.6" fill="currentColor" opacity=".7"/><circle cx="57.5" cy="7.7" r="3" fill="currentColor" opacity=".5"/></svg></span>
+      <span class="logo"><img src="logo-r.png" alt="Causeron logo" width="32" height="32"></span>
       <div class="brand-text">
         <h1>causeron</h1>
       </div>
@@ -77,10 +77,10 @@
         <textarea id="seed-text" rows="8" data-i18n-ph="seedPh"></textarea>
         <div class="row">
           <input id="project-name" type="text" data-i18n-ph="namePh">
-          <input id="seed-num" type="number" placeholder="Seed" value="42" title="Random seed (reproducibility)">
-          <input id="cfg-branching" type="number" placeholder="Branches" value="5" min="1" title="Consequences generated per event">
-          <input id="cfg-depth" type="number" placeholder="Depth" value="3" min="1" title="How many cause→effect levels deep">
-          <input id="cfg-maxnodes" type="number" placeholder="Max nodes" value="2000" min="1" title="Safety cap on total events (1–20000)">
+          <label class="cfg-field"><span data-i18n="cfgSeed">Seed</span><input id="seed-num" type="number" value="42" title="Random seed (reproducibility)"></label>
+          <label class="cfg-field"><span data-i18n="cfgBranches">Branches / event</span><input id="cfg-branching" type="number" value="5" min="1" title="Consequences generated per event"></label>
+          <label class="cfg-field"><span data-i18n="cfgDepth">Depth (levels)</span><input id="cfg-depth" type="number" value="3" min="1" title="How many cause→effect levels deep"></label>
+          <label class="cfg-field"><span data-i18n="cfgMaxNodes">Max events</span><input id="cfg-maxnodes" type="number" value="2000" min="1" title="Safety cap on total events (1–20000)"></label>
           <label class="turbo-toggle" title="Turbo: one big parallel call per root instead of per-level calls. Wins on latency-bound providers; on generation-bound (slow-thinking) models it is no faster. Ignored without an LLM."><input id="cfg-turbo" type="checkbox"> ≫ <span data-i18n="turbo">Turbo</span></label>
         </div>
         <button id="build-btn" class="btn btn-primary" data-i18n="build">Map the consequences</button>
@@ -203,6 +203,7 @@
         <span class="trajectory-title">≫ Live Trajectory</span>
         <span id="trajectory-count" class="trajectory-count"></span>
         <span id="trajectory-state" class="trajectory-state"></span>
+        <label class="traj-verbose" title="Show raw model prompts in the trajectory (developer mode)"><input id="traj-verbose" type="checkbox"> <span data-i18n="verbose">Verbose</span></label>
         <button id="trajectory-clear" class="btn btn-ghost btn-tiny" data-i18n="clear">clear</button>
       </div>
       <div id="trajectory-list" class="trajectory-list"></div>
