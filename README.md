@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="Causeron logo" width="120">
+<img src="assets/logo-r.png" alt="Causeron logo" width="120">
 
 # Causeron
 
@@ -10,7 +10,9 @@
 
 An open-source project by [**Riak**](https://riak.space) — AI software for exploring complex systems.
 
-[![tests](https://github.com/irwanformal-cmd/riak/actions/workflows/test.yml/badge.svg)](https://github.com/irwanformal-cmd/riak/actions/workflows/test.yml)
+> **Need it for a team?** [Causeron Business](https://riak.space/#pricing) — multi-user workspaces, API, SSO, SLA. Paid [services](https://riak.space/services/) and [sponsorship](https://saweria.co/riaksupport) fund this open core.
+
+[![tests](https://github.com/irwanformal-cmd/causeron/actions/workflows/test.yml/badge.svg)](https://github.com/irwanformal-cmd/causeron/actions/workflows/test.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![python: 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org)
 [![dependencies: zero](https://img.shields.io/badge/dependencies-zero-brightgreen.svg)](#key-properties)
